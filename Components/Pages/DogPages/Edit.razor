@@ -67,6 +67,26 @@ else
                     <InputText id="description" @bind-Value="Dog.Description" class="form-control" />
                     <ValidationMessage For="() => Dog.Description" class="text-danger" />
                 </div>
+                <div class="mb-3">
+                    <label for="healthstatus" class="form-label">HealthStatus:</label>
+                    <InputText id="healthstatus" @bind-Value="Dog.HealthStatus" class="form-control" />
+                    <ValidationMessage For="() => Dog.HealthStatus" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="goodwithkids" class="form-label">GoodWithKids:</label>
+                    <InputCheckbox id="goodwithkids" @bind-Value="Dog.GoodWithKids" class="form-check-input" />
+                    <ValidationMessage For="() => Dog.GoodWithKids" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="goodwithdogs" class="form-label">GoodWithDogs:</label>
+                    <InputCheckbox id="goodwithdogs" @bind-Value="Dog.GoodWithDogs" class="form-check-input" />
+                    <ValidationMessage For="() => Dog.GoodWithDogs" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="goodwithcats" class="form-label">GoodWithCats:</label>
+                    <InputCheckbox id="goodwithcats" @bind-Value="Dog.GoodWithCats" class="form-check-input" />
+                    <ValidationMessage For="() => Dog.GoodWithCats" class="text-danger" />
+                </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </EditForm>
         </div>

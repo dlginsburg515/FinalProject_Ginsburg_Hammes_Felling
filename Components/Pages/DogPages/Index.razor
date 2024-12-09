@@ -24,6 +24,10 @@
     <PropertyColumn Property="dog => dog.Gender" />
     <PropertyColumn Property="dog => dog.Age" />
     <PropertyColumn Property="dog => dog.Description" />
+    <PropertyColumn Property="dog => dog.HealthStatus" />
+    <PropertyColumn Property="dog => dog.GoodWithKids" />
+    <PropertyColumn Property="dog => dog.GoodWithDogs" />
+    <PropertyColumn Property="dog => dog.GoodWithCats" />
 
     <TemplateColumn Context="dog">
         <a href="@($"dogs/edit?id={dog.Id}")">Edit</a> |
