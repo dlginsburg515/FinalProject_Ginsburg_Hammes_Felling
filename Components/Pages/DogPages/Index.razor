@@ -1,4 +1,5 @@
 ﻿@page "/dogs"
+@rendermode InteractiveServer
 @using Microsoft.EntityFrameworkCore
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using FinalProject_DG_CH_BF.Models
@@ -8,33 +9,36 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Index</h1>
+<h1>Available Dogs:</h1>
 
 <p>
-    <a href="dogs/create">Create New</a>
+    <input type="search" @bind="NameFilter" @bind:event="oninput"/>
 </p>
 
-<QuickGrid Class="table" Items="context.Dog">
-    <PropertyColumn Property="dog => dog.Name" />
-    <PropertyColumn Property="dog => dog.DateArrived" />
-    <PropertyColumn Property="dog => dog.Weight" />
-    <PropertyColumn Property="dog => dog.Height" />
-    <PropertyColumn Property="dog => dog.Color" />
-    <PropertyColumn Property="dog => dog.Breed" />
-    <PropertyColumn Property="dog => dog.Gender" />
-    <PropertyColumn Property="dog => dog.Age" />
+
+
+<QuickGrid Class="table" Items="FilteredDogs" Pagination="pagination">
+    <PropertyColumn Property="dog => dog.Name" Sortable="true"/>
+    <PropertyColumn Property="dog => dog.DateArrived" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Weight" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Height" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Color" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Breed" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Gender" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Age" Sortable="true" />
     <PropertyColumn Property="dog => dog.Description" />
-    <PropertyColumn Property="dog => dog.HealthStatus" />
-    <PropertyColumn Property="dog => dog.GoodWithKids" />
-    <PropertyColumn Property="dog => dog.GoodWithDogs" />
-    <PropertyColumn Property="dog => dog.GoodWithCats" />
+    <PropertyColumn Property="dog => dog.HealthStatus" Sortable="true" />
+    <PropertyColumn Property="dog => dog.GoodWithKids" Sortable="true" />
+    <PropertyColumn Property="dog => dog.GoodWithDogs" Sortable="true" />
+    <PropertyColumn Property="dog => dog.GoodWithCats" Sortable="true" />
 
     <TemplateColumn Context="dog">
-        <a href="@($"dogs/edit?id={dog.Id}")">Edit</a> |
+
         <a href="@($"dogs/details?id={dog.Id}")">Details</a> |
-        <a href="@($"dogs/delete?id={dog.Id}")">Delete</a>
+
     </TemplateColumn>
 </QuickGrid>
+<Paginator State ="pagination"/>
 
 @code {
     private FinalProject_DG_CH_BFContext context = default!;
@@ -44,5 +48,12 @@
         context = DbFactory.CreateDbContext();
     }
 
+   
+    private string NameFilter = string.Empty;
+
+    private IQueryable<Dog> FilteredDogs => context.Dog.Where(m => m.Name!.Contains(NameFilter));
+
     public async ValueTask DisposeAsync() => await context.DisposeAsync();
+
+    private PaginationState pagination = new PaginationState { ItemsPerPage = 10 };
 }
