@@ -39,7 +39,8 @@ public class SeedDogData
                 HealthStatus = "Up to date on all vaccines. No health issues.",
                 GoodWithKids = true,
                 GoodWithDogs = true,
-                GoodWithCats = true,
+                GoodWithCats = true, 
+                imageName = "Doug.jpg"
 
 
             },
@@ -60,6 +61,7 @@ public class SeedDogData
                  GoodWithKids = true,
                  GoodWithDogs = true,
                  GoodWithCats = false,
+                 imageName = "Barbara.jpg"
 
 
              },
@@ -80,6 +82,7 @@ public class SeedDogData
                  GoodWithKids = true,
                  GoodWithDogs = false,
                  GoodWithCats = false,
+                 imageName = "Doris.jpg"
 
 
              },
@@ -100,6 +103,7 @@ public class SeedDogData
                  GoodWithKids = true,
                  GoodWithDogs = true,
                  GoodWithCats = true,
+                 imageName = "Henry.jpg"
 
 
              },
@@ -120,6 +124,7 @@ public class SeedDogData
                    GoodWithKids = true,
                    GoodWithDogs = true,
                    GoodWithCats = false,
+                   imageName = "Buford.jpg"
 
 
                },
@@ -139,6 +144,7 @@ public class SeedDogData
                 GoodWithKids = true,
                 GoodWithDogs = true,
                 GoodWithCats = true,
+                imageName = "Terri.jpg"
             });
 
         context.SaveChanges();

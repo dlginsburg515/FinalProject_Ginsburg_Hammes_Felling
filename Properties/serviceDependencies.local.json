@@ -12,6 +12,12 @@
       "type": "mssql.local",
       "connectionId": "MyDogDB",
       "dynamicId": null
+    },
+    "mssql3": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.local",
+      "connectionId": "Applications",
+      "dynamicId": null
     }
   }
 }

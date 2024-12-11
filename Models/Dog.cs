@@ -19,6 +19,7 @@ namespace FinalProject_DG_CH_BF.Models
         public Boolean GoodWithKids { get; set; }
         public Boolean GoodWithDogs { get; set; }
         public Boolean GoodWithCats { get; set; }
+        public string imageName { get; set; }
 
     }
 }

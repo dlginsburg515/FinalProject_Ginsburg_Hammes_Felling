@@ -15,5 +15,6 @@ namespace FinalProject_DG_CH_BF.Data
         }
 
         public DbSet<FinalProject_DG_CH_BF.Models.Dog> Dog { get; set; } = default!;
+        public DbSet<FinalProject_DG_CH_BF.Models.Application> Application { get; set; } = default!;
     }
 }

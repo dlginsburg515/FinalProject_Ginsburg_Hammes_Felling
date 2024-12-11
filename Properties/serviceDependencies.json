@@ -11,6 +11,11 @@
       "type": "mssql",
       "connectionId": "MyDogDB",
       "dynamicId": null
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "Applications",
+      "dynamicId": null
     }
   }
 }

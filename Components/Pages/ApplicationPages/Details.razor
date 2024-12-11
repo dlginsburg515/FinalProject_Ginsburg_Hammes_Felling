@@ -1,0 +1,70 @@
+﻿@page "/applications/details"
+@using Microsoft.EntityFrameworkCore
+@using FinalProject_DG_CH_BF.Models
+@inject IDbContextFactory<FinalProject_DG_CH_BF.Data.FinalProject_DG_CH_BFContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>Application</h2>
+    <hr />
+    @if (application is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">Status</dt>
+            <dd class="col-sm-10">@application.Status</dd>
+            <dt class="col-sm-2">PhoneNumber</dt>
+            <dd class="col-sm-10">@application.PhoneNumber</dd>
+            <dt class="col-sm-2">Email</dt>
+            <dd class="col-sm-10">@application.Email</dd>
+            <dt class="col-sm-2">FirstName</dt>
+            <dd class="col-sm-10">@application.FirstName</dd>
+            <dt class="col-sm-2">LastName</dt>
+            <dd class="col-sm-10">@application.LastName</dd>
+            <dt class="col-sm-2">PetID</dt>
+            <dd class="col-sm-10">@application.PetID</dd>
+            <dt class="col-sm-2">BirthDay</dt>
+            <dd class="col-sm-10">@application.BirthDay</dd>
+            <dt class="col-sm-2">NameOfVet</dt>
+            <dd class="col-sm-10">@application.NameOfVet</dd>
+            <dt class="col-sm-2">HasChildren</dt>
+            <dd class="col-sm-10">@application.HasChildren</dd>
+            <dt class="col-sm-2">HasDogs</dt>
+            <dd class="col-sm-10">@application.HasDogs</dd>
+            <dt class="col-sm-2">HasCats</dt>
+            <dd class="col-sm-10">@application.HasCats</dd>
+            <dt class="col-sm-2">Address</dt>
+            <dd class="col-sm-10">@application.Address</dd>
+            <dt class="col-sm-2">AdditionalInfo</dt>
+            <dd class="col-sm-10">@application.AdditionalInfo</dd>
+        </dl>
+        <div>
+            <a href="@($"/applications/edit?id={application.Id}")">Edit</a> |
+            <a href="@($"/applications")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private Application? application;
+
+    [SupplyParameterFromQuery]
+    private int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        application = await context.Application.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (application is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}
