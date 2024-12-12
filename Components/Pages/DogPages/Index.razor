@@ -18,23 +18,30 @@
 
 
 <QuickGrid Class="table" Items="FilteredDogs" Pagination="pagination">
+    <TemplateColumn Context="dog">
+
+        <img src=@dog.imageName alt="" width="150" height="150"
+             class="d-inline-block align-text-top" />
+
+
+    </TemplateColumn>
+
     <PropertyColumn Property="dog => dog.Name" Sortable="true"/>
-    <PropertyColumn Property="dog => dog.DateArrived" Sortable="true" />
-    <PropertyColumn Property="dog => dog.Weight" Sortable="true" />
-    <PropertyColumn Property="dog => dog.Height" Sortable="true" />
+    <PropertyColumn Property="dog => dog.Id" Sortable="true" />
     <PropertyColumn Property="dog => dog.Color" Sortable="true" />
     <PropertyColumn Property="dog => dog.Breed" Sortable="true" />
     <PropertyColumn Property="dog => dog.Gender" Sortable="true" />
     <PropertyColumn Property="dog => dog.Age" Sortable="true" />
-    <PropertyColumn Property="dog => dog.Description" />
-    <PropertyColumn Property="dog => dog.HealthStatus" Sortable="true" />
     <PropertyColumn Property="dog => dog.GoodWithKids" Sortable="true" />
     <PropertyColumn Property="dog => dog.GoodWithDogs" Sortable="true" />
     <PropertyColumn Property="dog => dog.GoodWithCats" Sortable="true" />
 
+    
+
     <TemplateColumn Context="dog">
 
         <a href="@($"dogs/details?id={dog.Id}")">Details</a> |
+        
 
     </TemplateColumn>
 </QuickGrid>

@@ -40,7 +40,7 @@ public class SeedDogData
                 GoodWithKids = true,
                 GoodWithDogs = true,
                 GoodWithCats = true, 
-                imageName = "Doug.jpg"
+                imageName = "/Images/Doug.jpg"
 
 
             },
@@ -61,7 +61,7 @@ public class SeedDogData
                  GoodWithKids = true,
                  GoodWithDogs = true,
                  GoodWithCats = false,
-                 imageName = "Barbara.jpg"
+                 imageName = "/Images/Barbara.jpg"
 
 
              },
@@ -82,7 +82,7 @@ public class SeedDogData
                  GoodWithKids = true,
                  GoodWithDogs = false,
                  GoodWithCats = false,
-                 imageName = "Doris.jpg"
+                 imageName = "/Images/Doris.jpg"
 
 
              },
@@ -103,7 +103,7 @@ public class SeedDogData
                  GoodWithKids = true,
                  GoodWithDogs = true,
                  GoodWithCats = true,
-                 imageName = "Henry.jpg"
+                 imageName = "/Images/Henry.jpg"
 
 
              },
@@ -124,7 +124,7 @@ public class SeedDogData
                    GoodWithKids = true,
                    GoodWithDogs = true,
                    GoodWithCats = false,
-                   imageName = "Buford.jpg"
+                   imageName = "/Images/Buford.jpg"
 
 
                },
@@ -144,7 +144,7 @@ public class SeedDogData
                 GoodWithKids = true,
                 GoodWithDogs = true,
                 GoodWithCats = true,
-                imageName = "Terri.jpg"
+                imageName = "/Images/Terri.jpg"
             });
 
         context.SaveChanges();
