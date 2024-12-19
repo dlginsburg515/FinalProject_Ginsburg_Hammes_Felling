@@ -15,7 +15,7 @@
         <EditForm method="post" Model="Application" OnValidSubmit="AddApplication" FormName="create" Enhance>
             <DataAnnotationsValidator />
             <ValidationSummary class="text-danger" role="alert"/>
-                  
+
             <div class="mb-3">
                 <label for="phonenumber" class="form-label">PhoneNumber:</label> 
                 <InputText id="phonenumber" @bind-Value="Application.PhoneNumber" class="form-control" /> 
@@ -94,6 +94,7 @@
     {
         using var context = DbFactory.CreateDbContext();
         context.Application.Add(Application);
+        Application.Status = "Pending";
         await context.SaveChangesAsync();
         NavigationManager.NavigateTo("/applications");
     }
