@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:FinalProject_DG_CH_BFContext"
+    },
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql2": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.local",
+      "connectionId": "MyDogDB",
+      "dynamicId": null
+    },
+    "mssql3": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.local",
+      "connectionId": "Applications",
+      "dynamicId": null
+    }
+  }
+}

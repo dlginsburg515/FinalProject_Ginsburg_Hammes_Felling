@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:FinalProject_DG_CH_BFContext"
+    },
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "MyDogDB",
+      "dynamicId": null
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "Applications",
+      "dynamicId": null
+    }
+  }
+}
